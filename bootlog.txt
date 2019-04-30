@@ -1,0 +1,138 @@
+Booting...
+init_ram
+ 00000102 W init ddr ok
+
+DRAM Type: DDR2
+	DRAM frequency: 533MHz
+	DRAM Size: 32MB
+JEDEC id C84015, EXT id 0xc840
+found gd25q16
+flash vendor: GigaDevice
+gd25q16, size=2MB, erasesize=4KB, max_speed_hz=41000000Hz
+auto_mode=0 addr_width=3 erase_opcode=0x00000020
+=>CPU Wake-up interrupt happen! GISR=89000004 
+ 
+---Realtek RTL8197F boot code at 2018.03.02-14:45+0800 v3.4.11B.9 (600MHz)
+Mac addr:b4-0f-3b-24-9b-90
+wait for upgrage
+port link 0x000030e0 0x000030e0 0x000030e0 0x000030e0
+irq:0x00008480
+Jump to image start=0x80500000...
+decompressing kernel:
+Uncompressing... done, booting the kernel.
+done decompressing kernel.
+start address: 0xa0000600
+[cyg_net_init] Init: mbinit(0x00000000)
+[cyg_net_init] Init: cyg_net_init_devs(0x00000000)
+Init device 'rltk819x_eth0'
+Init device 'rltk819x_eth1'
+Init device 'rltk819x_eth7'
+Init device 'rltk819x_peth0'
+[peth0] added, mapping to [eth1]...
+Init device 'rltk819x_eth4'
+Init device 'rltk819x_eth3'
+Init device 'rltk819x_eth2'
+Init device 'rltk819x_wlan1'
+RFE TYPE =0
+[pwlan0] added...
+Init device 'rltk819x_wlan1-vxd'
+RFE TYPE =0
+Init device 'rltk819x_wlan1-va3'
+RFE TYPE =0
+Init device 'rltk819x_wlan1-va2'
+RFE TYPE =0
+Init device 'rltk819x_wlan1-va1'
+RFE TYPE =0
+Init device 'rltk819x_wlan1-va0'
+RFE TYPE =0
+Init device 'rltk819x_wlan0'
+[pwlan0] added...
+Init device 'rltk819x_wlan0-vxd'
+Init device 'rltk819x_wlan0-va3'
+Init device 'rltk819x_wlan0-va2'
+Init device 'rltk819x_wlan0-va1'
+Init device 'rltk819x_wlan0-va0'
+Init device 'rltk819x_pwlan0'
+[cyg_net_init] Init: loopattach(0x00000000)
+[cyg_net_init] Init: ifinit(0x00000000)
+[cyg_net_init] Init: domaininit(0x00000000)
+[cyg_net_init] Init: cyg_net_add_domain(0x80403298)
+New domain internet at 0x00000000
+IP packet filtering initialized, divert enabled, rule-based forwarding enabled, default to deny, logging disabled
+Realtek FastPath:v1.03
+[cyg_net_init] Init: cyg_net_add_domain(0x80403148)
+New domain route at 0x00000000
+[cyg_net_init] Init: call_route_init(0x00000000)
+[cyg_net_init] Init: sysctl_register_all(0x00000000)
+[cyg_net_init] Done
+Creating Init Thread...
+cpuload_calibration_value=6070449
+Envram is initing! base_addr=0x1c000 size=0x3000
+@@@[envram] crc=0x57 org=0x57
+Nvram is initing! base_addr=0x1f8000 size=0x7fff
+@@@[nvram] crc=0xa8 org=0xa8
+System start
+Realtek GPIO init
+this thread can be checked ! if thread stack overflow or soiled
+------------main
+tenda_ifconfig error 
+: Invalid argument
+[MAIN->tapf_vlan_config->262]:vlan config ok!
+[MAIN->br_init->878]:br(bridge0) init ok!
+[MAIN->br_init->878]:br(bridge1) init ok!
+[MAIN->init_before_module_init_services->76]:init_before_module_init_services ok!
+[DEBUG] [MSG->msg_init->37]:rc_msg init ok!
+eth0: promiscuous mode enabled
+kMAIrNe-8>6t5axp_fi_ovcltaln(_)c:o4n8f0i0g,- >s2e6t2 ]p:ovrlta n3  c0oMn fFiUgL Lo
+ !
+[[WARN] Interface not initialized yet!
+r[WARN] Interface not initialized yet!
+ ->rc_imnsigt_W2e_btsl:v -l>a1n0i8p]=:[k1e9y2 .=1 6o8p.,1v7a8l.u7e7 ]=
+ 3
+0[-M-S-G--->-m-s-g-_-siennidt_Wmesbgs_-2-_-m-b-o-x--->-1-2-0-]2:7c0e-n-t-e-r-:-0-0-0-0-0-1
+ 6
+[MSG->msg_send_msg_2_mbox->136]:send msg [op=3] success!
+[TPI->tpi_lan_start->146]:start success!
+Interface doesn't accept private ioctl...
+clear_acl_table (8B9E): Unknown error
+Interface doesn't accept private ioctl...
+clear_acl_table (8B9E): Unknown error
+wlan0     fflush_acl_list:0  
+wlan1     fflush_acl_list:0  
+func:ipnat_init i = 0
+[TPI->tpi_firewall_start->239]:start success!
+_TPI->tpi_http_start->128]:htt#p# #sftuanrct= asuutcoc_ecsosn!n
+!eCxLtIe>n d[_TsPtIa-t>utsp_ii_nuiptn,p _ssetta ratu-t>o1-0c7o]n:ns trasrsti  stuoc c-e3s5s
+
+osl_open_udp_socket: bind failed: Can't assign requested address[TPI->tpi_dnsmasq_start->75]:start success!
+[TPI->tpi_sntp_start->80]:start success!
+
+[TPI->tpi_dhcp_server_start->323]:start success!
+[TPI->tpi_wan_surf_check_start->599]:start success!
+pTPI->tpi_wan_mode_check_update_info->75]:mode_need_switch is not yes[!t
+ri[_TiPgIm-p>_tipnii_ta]u[t1o2_6c]o[nlnu_msienraviesr]_ sntoatrhti-n>g1 7t3o] :dsot.a
+ t success!
+[TPI->tpi_reboot_check_start->463]:start success!
+[ERROR] [TPI->tpi_wifi_switch_sched_update_info->67]:schedule count[ 0 ] wrong
+[ERROR] [TPI->tpi_ddns_start->105]:the mib is off, connot start!
+.....ucloud.............do......option....
+[TPI->tpi_ucloud_start->101]:start success!
+
+
+[TPI->tpi_led_sta[WARN] Interface not initialized yet!
+r[WARN] Interface not initialized yet!
+t->447]:start success!
+[TPI->tpi_switch_led_start->118]:start success!
+[MAIN->init_after_module_init_services->87]:init_after_module_init_services ok!
+[rc->rc_module_msg_handle->157]:start handle module[6,rc_firewall]'s msg,op=3.debug_id=0.wlan_ifname=.string_info=
+[TPI->tpi_firewall_action->137]:op=3
+ioctl(SIOCIPFFL): Invalid argument
+[TPI->tpi_firewall_stop->263]:stop success!
+Interface doesn't accept private ioctl...
+clear_acl_table (8B9E): Unknown error
+Interface doesn't accept private ioctl...
+clear_acl_table (8B9E): Unknown error
+wlan0     fflush_acl_list:0  
+wlan1     fflush_acl_list:0  
+func:ipnat_init i = 0
+[TPI->tpi_firewall_start->239]:start success!

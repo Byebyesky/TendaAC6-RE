@@ -1,0 +1,55 @@
+-------Hardware overview-------
+    Flash: gd25q16
+    Datasheet: http://www.elm-tech.com/en/products/spi-flash-memory/gd25q16/gd25q16.pdf
+    Size: 2048K-Byte
+    256 Bytes per programmable page
+
+    Main CPU: RTL8197FNT
+    Instruction Set: MIPS32
+    CPU: https://www.realtek.com/en/products/communications-network-ics/item/rtl8197f
+    Features
+
+        CPU
+        MIPS 24Kc
+        Up to 1000MHz
+        I-Cache 64KB / D-Cache 32KB 
+
+        Memory
+        Supports 16 bit DDR1 and DDR2
+        Supports SPI NOR Flash and SPI-NAND Flash
+        Supports Parallel-NAND Flash 
+
+        Wi-Fi
+        2.4GHz 2T2R 802.11 b/g/n 
+
+        Engine
+        Security Engine
+        GDMA 4 Channel 
+
+        Peripherals
+        One PCIe Gen1 Host Interface
+        Two USB2.0 Interfaces
+        One RGMII Interface
+        One SDXC/eMMC Interface
+        Two SPI Interfaces
+        Three UART Interfaces
+        Two I2C Interfaces
+        One I2S Interface
+        One PCM Interface
+        Four PWM
+        Four Timer Events
+
+    Network Controller: RTL8812BRH
+    Features
+
+        General
+        QFN-88 package
+        802.11ac/abgn
+        802.11ac 2x2, Wave-2 compatible with MU-MIMO 
+
+        Host interface
+        PCI Express 1.1 for WLAN controller
+
+    DRAM Type: DDR2
+    	DRAM frequency: 533MHz
+    	DRAM Size: 32MB

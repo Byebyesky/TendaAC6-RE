@@ -1,0 +1,100 @@
+-------Serial-------
+Pinout left-right: GND, RX, TX
+Baudrate: 38400
+picocom -b 38400 /dev/ttyUSB0
+
+----dumping the kernel----
+1. open terminal, log output to file
+2. run "dump 0x80000600 2424832" (just dump 2,31MB, should be enough)
+3. wait for about 10 minutes
+4. snip start and end off of hex dump
+5. run python3 createDump.py [inputfile] [outputfile] 0x80000600
+
+----dumping the bootloader----
+dump 0xB0000000 74880
+
+----decompressing the bootloader----
+There is a gzip compressed archive in the bootloader starting from 0x8D60
+
+-------Memory Map-------
+Reset-Vector:               0xBFC00000
+00 B0 1F 3C: lui ra, 0xb000
+00 00 FF 37: ori ra, ra, 0
+08 00 E0 03: jr ra
+
+Bootloader start:           0xB0000000
+Bootloader end:             0xB001247C
+RAM-Base:                   0x80000000 (cached) or 0xA0000000 (uncached)
+RAM-End:		            0x82000000 (cached) or 0xA2000000 (uncached)
+Uncompressed Bootloader:    0x80000000
+Kernel Image start:         0x80500000
+Kernel-Base:                0x80000600 or 0xA0000600
+MMIO_Base:                  0xB8000000
+UART_Base:                  0xB8147000
+Flash:                      0xB8143000(?)
+
+Registers:
+DRAM_Size_HW:               0xb800000C (1 << (*0xb800000C & 0xf)) {bit6: 32MB, bit5: 128, bit4: 64}
+DRAM_Size:                  0xB8000F00
+UART_Charbuffer:            0xB8147024
+UART_Flush:                 0xB8147008
+
+-------LEDS (left to right)-------
+LED1
+LED2
+LED3 = 0xB8000010 -> bit11: 0 == on
+LED4
+
+-------Reversed functions-------
+@0xB000024C
+UART_Init() {
+    *0xB814700C = 0x5;
+    *0xB8147008 = 0xc7;
+    *0xB8147004 = 0x0;
+    *0xB814700C = 0x85;
+    *0xB8147000 = 0xa2;
+    *0xB8147004 = 0x0;
+    *0xB814700C = 0x5;
+
+    char booting[] = "Booting...";
+    outputUART(booting);
+}
+
+
+-------Boot sequence--------
+
+Execution starts at 0xb0000000:
+stage1_main() {
+    UART_Init();
+    Cache_Init();
+    cpuAndRam_Init();
+    
+    stage2_main             = 0x80100000;
+    bootloader_end          = 0xB001247C;
+    bootloader_stage2_start = 0xB0007000;
+    memcpy(stage2_main, bootloader_stage2_start, bootloader_end)
+    
+    Index_Load_Tag(0x80000000, 0x8000)
+    Invalidate_Chache(0x80000000, 0x10000);
+    goto stage2_main
+}
+
+stage2_main() {
+    gzipArchiveAddr = Bootloader_start + 0x8D60; // stage2_main + 0x1D60; //Forgot which
+    stage3_main = 0x80000000;
+    decompress_Bootloader(gzipArchiveAddr, something, destAddr, somethingMore);
+    update_Cache(); //same two instructions as above
+    goto stage3_main;
+}
+
+stage3_main(){
+    setupDebug()?
+    memset(0x80018bc0, 0, 0x446C8);
+
+
+}
+
+
+------Misc----
+To reboot the instruction at 0x80018bdc is patched to "lui ra, 0xb000"
+which jumps to the start of the bootloader.

@@ -1,0 +1,78 @@
+Realtek's command:
+
+Commands    Descriptions                             Usage               
+--------    ------------                             -----
+db          db <Address> <Len>                                           
+dw          dw <Address> <Len>                                           
+eth         eth                                                          
+wlan0       wlan0                                                        
+wlan0-va0   wlan0-va0                                                    
+wlan0-va1   wlan0-va1                                                    
+wlan0-va2   wlan0-va2                                                    
+wlan0-va3   wlan0-va3                                                    
+wlan0-vxd   wlan0-vxd                                                    
+wlan1       wlan1                                                        
+wlan1-va0   wlan1-va0                                                    
+wlan1-va1   wlan1-va1                                                    
+wlan0-va2   wlan0-va2                                                    
+wlan1-va3   wlan1-va3                                                    
+wlan1-vxd   wlan1-vxd                                                    
+eb          eb <Address> <Value1> <Value2>...                            
+ew          ew <Address> <Value1> <Value2>...                            
+alg         alg                                                          
+brconfig    brconfig                                                     
+cat                                                                      
+cpuload     cpuload                                                      
+date        show system local time                                       
+excep       cause exception                                              
+fastpath    fastpath                                                     
+getmib      getmib                                                       
+help        Displays a list of commands                                  
+?           Displays a list of commands                                  
+hexcat                                                                   
+dump        Shows a memory dump                                          
+hw_nat      hw_nat                                                       
+ib          ib                                                           
+idd         idd                                                          
+ifconfig    ifconfig                                                     
+ipfw        ipfw                                                         
+irf         irf                                                          
+iw          iw                                                           
+iwpriv      iwpriv                                                       
+ll                                                                       
+mac         mac <ifname> [mac addr]                                      
+mroute      mroute                                                       
+ob          ob                                                           
+od          od                                                           
+orf         orf                                                          
+ow          ow                                                           
+pdump       dump a  thread                                               
+ping        ping                                                         
+port_fwd    port_fwd                                                     
+version     Shows build version                                          
+ps          Shows a list of threads                                      
+reboot      Reset the system                                             
+reinit      reinit                                                       
+reinit_test reinit_test                                                  
+reset       Reset the system                                             
+route       set static route                                             
+rssi        rssi                                                         
+alias       show alias table                                             
+rtl_vlan    rtl_vlan                                                     
+sp          Sets a threads priority                  [thread ID]         
+setmib      setmib                                                       
+show        show                                                         
+tcpstats    tcpstats                                                     
+test_skb    test_skb                                                     
+kill        Kills a running thread                   [thread ID]         
+release     Break a thread out of any wait           [thread ID]         
+trigger_port trigger_port                                                 
+uptime      Shows system uptime                                          
+watchdog    on/off/res/reboot                                            
+
+Tenda's command:
+msg         ce_power    app_debug   build       stat_link   link_status 
+iwpriv      realtek     splx        thread      mbuf        debug       
+route       et          wlconf      fw          ping        ifconfig    
+syslog      time        tenda_arp   arp         envram      nvram       
+restart     reboot 
