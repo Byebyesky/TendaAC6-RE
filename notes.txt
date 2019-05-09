@@ -24,14 +24,17 @@ Reset-Vector:               0xBFC00000
 
 Bootloader start:           0xB0000000
 Bootloader end:             0xB001247C
+Envram start:               0xB001C000
+Envram end:                 0xB001CA1C
+Flash?:                     0xB0020000
 RAM-Base:                   0x80000000 (cached) or 0xA0000000 (uncached)
-RAM-End:		            0x82000000 (cached) or 0xA2000000 (uncached)
+RAM-End:                    0x82000000 (cached) or 0xA2000000 (uncached)
 Uncompressed Bootloader:    0x80000000
 Kernel Image start:         0x80500000
 Kernel-Base:                0x80000600 or 0xA0000600
 MMIO_Base:                  0xB8000000
 UART_Base:                  0xB8147000
-Flash:                      0xB8143000(?)
+???:                        0xB8143000
 
 Registers:
 DRAM_Size_HW:               0xb800000C (1 << (*0xb800000C & 0xf)) {bit6: 32MB, bit5: 128, bit4: 64}
