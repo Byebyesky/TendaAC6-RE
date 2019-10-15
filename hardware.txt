@@ -39,7 +39,7 @@
         Four PWM
         Four Timer Events
 
-    Network Controller: RTL8812BRH
+    Network Controller: https://www.realtek.com/en/products/communications-network-ics/item/rtl8812brh
     Features
 
         General

@@ -48,6 +48,8 @@ LED2
 LED3 = 0xB8000010 -> bit11: 0 == on
 LED4
 
+0xB8003000
+
 -------Reversed functions-------
 @0xB000024C
 UART_Init() {
@@ -90,11 +92,19 @@ stage2_main() {
     goto stage3_main;
 }
 
+setupInterrupts() {
+    disable_Interrupts();
+    relocateExceptionVector();
+    set_Interrupt_Mode();
+}
+
 stage3_main(){
-    setupDebug()?
+    disableDebug();
     memset(0x80018bc0, 0, 0x446C8);
-
-
+    enable_Privileged_Instructions();
+    disableInterrupts();
+    setupInterrupts();
+    flashInit();
 }
 
 
